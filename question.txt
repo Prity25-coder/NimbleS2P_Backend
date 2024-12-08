@@ -1,0 +1,9 @@
+Task Details:
+Product CURD operation is exist in main controller that we need to move into Product controller
+Please add Employee CURD operation. 
+Addition of employee
+Deletion
+Get Employee By Name
+Add a new property Salary, in Employee Entity
+Get the Employee whose salary is higher than all - Return only one Employee
+Enable Swagger for this document. 

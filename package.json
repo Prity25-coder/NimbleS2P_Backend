@@ -1,0 +1,21 @@
+{
+  "name": "nimbles2p",
+  "version": "1.0.0",
+  "description": "NimbleS2P backend CURD operation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Prity",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.5",
+    "dotenv": "^16.4.6",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.8.3",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

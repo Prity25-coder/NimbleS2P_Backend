@@ -1,0 +1,332 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "description": "Product CURD operation is exist in main controller that we need to move into Product controller Please add Employee CURD operation 😊🚀✈️",
+    "title": "Employee and Product CURD API"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1"
+    }
+  ],
+  "components": {},
+  "paths": {
+    "/employees": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Get all Employee",
+        "description": "This API endpoint is to get all employee",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Create Employee",
+        "description": "This API endpoint is to crate new employee",
+        "requestBody": {
+          "content": {
+            " application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "salary": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "name",
+                  "role",
+                  "salary"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Post Created successfully"
+          },
+          "400": {
+            "description": "Validation Error"
+          }
+        }
+      }
+    },
+    "/employees/{id}": {
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update Employee",
+        "description": "This API endpoint is update Employee",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Employee update by id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "salary": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "delete Employee by id",
+        "description": "This API endpoint is to delete single Employee",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": " id to delete employee"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee removed successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      }
+    },
+    "/employees/name": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "get employee by name",
+        "description": "This API endpoint is to get employee name",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Employee to get check there name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/employees/salary": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Get Employee by higher salary",
+        "description": "This API endpoint is to get by higher salary",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get all Product",
+        "description": "This API endpoint is to get all product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Create Product",
+        "description": "This API endpoint is to crate new product",
+        "requestBody": {
+          "content": {
+            " application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "title",
+                  "description",
+                  "price"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Post Created successfully"
+          },
+          "400": {
+            "description": "Validation Error"
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "patch": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Update Product",
+        "description": "This API endpoint is update Product",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Product update by id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "delete Product by id",
+        "description": "This API endpoint is to delete single Product",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": " id to delete product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product removed successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        }
+      }
+    }
+  }
+}
